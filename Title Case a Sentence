@@ -3,3 +3,24 @@ Return the provided string with the first letter of each word capitalized. Make 
 
 For the purpose of this exercise, you should also capitalize connecting words like the and of.
 
+*** MY SOLUTION ***
+
+function titleCase(str) {
+  let capString = "";
+  let splitString = str.split(" ");
+  for (let i = 0; i < str.split(" ").length; i++) {
+   capString += splitString[i].charAt(0).toUpperCase() + splitString[i].slice(1).toLowerCase() + " ";
+  } 
+  return console.log(capString.slice(0,-1));
+  
+}
+
+//titleCase("I'm a little tea pot");
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT");
+
+---- CONSOLE ----
+
+Here Is My Handle Here Is My Spout
+
+
+
