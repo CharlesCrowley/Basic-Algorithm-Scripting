@@ -12,12 +12,12 @@ function chunkArrayInGroups(arr, size) {
        arr2d.unshift(arr)
      } else 
      if (arr.length == size * 2) {
-       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(size, size))
        arr2d.unshift(arr.splice(0,size))
      } else
      if (arr.length == size * 3) {
-       arr2d.unshift(arr.splice(size + size + 1, -1))
-       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(size, size))
        arr2d.unshift(arr.splice(0,size))
      } else 
      if (arr.length == size * 4) {
@@ -28,7 +28,7 @@ function chunkArrayInGroups(arr, size) {
      }  
    } else
    if (arr.length == size * 2) {
-       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(size, size))
        arr2d.unshift(arr.splice(0,size)) 
   } else 
   if (arr.length == size * 3) {
