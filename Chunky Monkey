@@ -1,2 +1,70 @@
 Chunky Monkey
 Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+// CODE
+
+function chunkArrayInGroups(arr, size) {
+  let arr2d = [];
+  let trueOrFalse = arr.length % size === 0 
+  let remainderNum = arr.length % size;
+   if (trueOrFalse === false) {
+     arr2d.push(arr.splice(-remainderNum))
+     if (arr.length === size) {
+       arr2d.unshift(arr)
+     } else 
+     if (arr.length == size * 2) {
+       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(0,size))
+     } else
+     if (arr.length == size * 3) {
+       arr2d.unshift(arr.splice(size + size + 1, -1))
+       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(0,size))
+     } else 
+     if (arr.length == size * 4) {
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(0,size))
+     }  
+   } else
+   if (arr.length == size * 2) {
+       arr2d.unshift(arr.splice(size, size + size))
+       arr2d.unshift(arr.splice(0,size)) 
+  } else 
+  if (arr.length == size * 3) {
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(size, size))
+       arr2d.unshift(arr.splice(0,size)) 
+  }
+  return arr2d.sort() // [[0, 1], [2, 3], [4, 5], [6, 7], [8]]
+}
+
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)
+
+/* COMMENTS 
+
+//let splitArr1 = arr.slice(0, size)
+  //let splitArr2 = arr.slice(0 + size, size + size)
+  //let splitArr3 = arr.slice()
+
+// .slice and have (size) passed in as the end point. Then add it to the start point in all iterations after the first one. 
+
+// case for loose ends. Calc with % for remainder. 
+// logic for loose end. If array has remainder 1 then pop element into a holding array, then add it to the others at the end... same with 2 left over, and 3. You could use the result of arr.length % size to determine how many you push off, or slice/splice off. 
+
+//push into a new array. 
+
+
+/* true logic. if arr.length === true
+*** this has to be done after removing the remainder from the
+array. ***
+if arr.length == size * 2  { arr.length /  size(2) = 2
+if arr.length == size * 3  { arr.length(6) / size(2) = 3 
+if arr.length == size * 4  { arr.length / 4
+
+then split(0,size) and 
+then split(size, size * i) 
+ */
+
+*/
