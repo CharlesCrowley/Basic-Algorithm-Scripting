@@ -80,7 +80,7 @@ function chunkArrayInGroups(arr, size) {
   return newArr;
 }
 
-// ANOTHER SOLUTION
+// ANOTHER SOLUTION PROVIDED BY OPENAI
 
 function chunkArrayInGroups(arr, size) {
   let result = [];
