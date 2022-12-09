@@ -70,7 +70,7 @@ then split(size, size * i)
 */
 
 
-// BETTER SOLUTION
+// BETTER SOLUTION PROVIDED BY OPENAI
 
 function chunkArrayInGroups(arr, size) {
   let newArr = [];
